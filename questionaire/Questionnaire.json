@@ -1,0 +1,23 @@
+{
+    "1": {
+        "Question": "Are you hungry. ?",
+        "Answers": [
+            "Yes",
+            "No"
+        ]
+    },
+    "2": {
+        "Question": "What do you want to eat. ?",
+        "Answers": [
+            "Pizza",
+            "Zinger"
+        ]
+    },
+    "3": {
+        "Question": "Would like to add Ketchup. ?",
+        "Answers": [
+            "Yes",
+            "No"
+        ]
+    }
+}

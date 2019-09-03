@@ -1,0 +1,83 @@
+[
+    {
+        "1": {
+            "Question": "Are you hungry. ?",
+            "Answers": [
+                "Yes",
+                "No"
+            ]
+        },
+        "2": {
+            "Question": "What do you want to eat. ?",
+            "Answers": [
+                "Pizza",
+                "Zinger",
+                "Shuwarma"
+            ]
+        },
+        "3": {
+            "Question": "Would like to add Ketchup. ?",
+            "Answers": [
+                "Yes",
+                "No"
+            ]
+        }
+    },
+    {
+        "1": {
+            "Question": "Do you like to travel. ?",
+            "Answers": [
+                "Yes",
+                "No"
+            ]
+        },
+        "2": {
+            "Question": "What is your favorite travel destination. ?",
+            "Answers": [
+                "Gilgit",
+                "Kashmir",
+                "Balochistan"
+            ]
+        },
+        "3": {
+            "Question": "You prefer traveling with. ?",
+            "Answers": [
+                "Family",
+                "Friends"
+            ]
+        },
+        "4": {
+            "Question": "You travel for. ?",
+            "Answers": [
+                "Food",
+                "Fun and Relaxation",
+                "PhotoGraphy",
+                "All"
+            ]
+        }
+    },
+    {
+        "1": {
+            "Question": "Do you like Programming. ?",
+            "Answers": [
+                "Yes",
+                "No"
+            ]
+        },
+        "2": {
+            "Question": "Which programming language is your favorite. ?",
+            "Answers": [
+                "C++",
+                "Python",
+                "Ruby on Rails"
+            ]
+        },
+        "3": {
+            "Question": "You like. ?",
+            "Answers": [
+                "Stack-Overflow",
+                "Quora"
+            ]
+        }
+    }
+]

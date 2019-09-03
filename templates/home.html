@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <title>Questionnaire</title>
+
+    <style>
+            #food {
+            height: 150px;
+            width: 200px;
+            background-color: #EAEDED;
+            float: left;
+            border-radius: 6px;
+            padding: 10px;
+            margin-left: 370px;
+            margin-top: 150px;
+        }
+
+        #travel {
+            height: 150px;
+            width: 200px;
+            background-color: #EAEDED;
+            float: left;
+            border-radius: 6px;
+            padding: 10px;
+            margin-left: 50px;
+            margin-top: 150px;
+        }
+
+        #pro
+        {
+            height: 150px;
+            width: 200px;
+            background-color: #EAEDED;
+            float: left;
+            border-radius: 6px;
+            padding: 10px;
+            margin-left: 50px;
+            margin-top: 150px;
+        }
+
+        #btnQuestionnaire {
+            height: 40px;
+            width: 70px;
+            border-radius: 6px;
+        }
+
+        #btnQuestionnaire:hover {
+            background-color: #2C3E50;
+            align-content: center;
+            color: #EAEDED;
+        }
+
+        #pro:hover {
+            background-color: #F9E79F;
+        }
+
+        #travel:hover {
+            background-color: #F9E79F;
+        }
+
+        #food:hover {
+            background-color: #F9E79F;
+        }
+
+        body {
+            background-color: #2C3E50;
+        }
+
+        #title {
+            color: #EAEDED
+        }
+
+        #QuestionnaireForm {
+            border-radius: 6px;
+            height: 120px;
+            width: 180px;
+        }
+
+        #dialog-div {
+            margin-top: 150px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id = "title">
+        <h1> Project done as a technical assessment </h1>
+    </div>
+    <div id="parent">
+        <div id="main-div">
+            <div id="food">
+                <div id="text-area">
+                    <h4> Food Questionnaire </h4>
+                    <p> Fun Questions related to your food choices. </p>
+                    <button id = "btnQuestionnaire" onclick = "location.href = 'food'">Click me</button>
+                </div>
+            </div>
+            <div id="travel" >
+                <div id="text-area">
+                    <h4> Travel Questionnaire </h4>
+                    <p> Fun Questions related to your travel experience. </p>
+                    <button id = "btnQuestionnaire" onclick = "location.href = 'travel'">Click me</button>
+                </div>
+            </div>
+            <div id="pro">
+                <div id="text-area">
+                    <h4> Programming Questionnaire </h4>
+                    <p>Let's discuss something related to programming</p>
+                    <button id = "btnQuestionnaire" onclick = "location.href = 'pro'">Click me</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        localhost:3000/getbot
+    </script>
+</body>
+
+</html>

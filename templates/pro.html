@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Programming</title>
+
+    <style>
+        #food {
+            height: 150px;
+            width: 200px;
+            background-color: #EAEDED;
+            float: left;
+            border-radius: 6px;
+            padding: 10px;
+            margin-left: 370px;
+            margin-top: 150px;
+        }
+
+        #travel {
+            height: 150px;
+            width: 200px;
+            background-color: #EAEDED;
+            float: left;
+            border-radius: 6px;
+            padding: 10px;
+            margin-left: 50px;
+            margin-top: 150px;
+        }
+
+        #pro {
+            height: 150px;
+            width: 200px;
+            background-color: #EAEDED;
+            float: left;
+            border-radius: 6px;
+            padding: 10px;
+            margin-left: 50px;
+            margin-top: 150px;
+        }
+
+        #btnQuestionnaire {
+            height: 40px;
+            width: 70px;
+            border-radius: 6px;
+        }
+
+        #btnQuestionnaire:hover {
+            background-color: #2C3E50;
+            align-content: center;
+            color: #EAEDED;
+        }
+
+        #pro:hover {
+            background-color: #F9E79F;
+        }
+
+        #travel:hover {
+            background-color: #F9E79F;
+        }
+
+        #food:hover {
+            background-color: #F9E79F;
+        }
+
+        body {
+            background-color: #2C3E50;
+        }
+
+        #title {
+            color: #EAEDED
+        }
+
+        #QuestionnaireForm {
+            border-radius: 6px;
+            height: 120px;
+            width: 180px;
+        }
+
+        #dialog-div {
+            margin-top: 150px;
+        }
+    </style>
+
+    <script>
+        let doc;
+        let endResponse = (message) => {
+            document.getElementById("main-div").innerHTML = `<h1 style = "text-align: center; padding-top: 20px;"><i>Many thanks. <br>${message}</i></h1><br>
+        <button id = "btnQuestionnaire" style = "height: 50px; width: 100px; border-radius: 6px;" onclick = "location.href = '/'"> Go back to homepage </button>`
+        }
+
+        let creatingMainDiv = (res) => {
+            let question = res['Question'];
+            let answers = [];
+
+            for (let i = 0; i < res['Answers'].length; i++) {
+                answers.push(res['Answers'][i])
+            }
+            // alert(JSON.stringify(res));
+            doc = `<h4 id = "q">${question}</h4><br>`
+            for (let i = 0; i < answers.length; i++) {
+                doc = `${doc}<input id="r${i}" type="radio" name="option" value= ${answers[i]}> ${answers[i]}<br>`
+            }
+            doc = `${doc}<br><button style = "height: 40px; width: 60px; border-radius: 6px;" onclick = "callServer()"> Submit </button>`;
+            document.getElementById("main-div").innerHTML = doc;
+        }
+        window.onload = () => {
+            $.ajax({
+                url: 'http://localhost:8000/QuestionnairPro/',
+                method: 'GET',
+                success: (res) => {
+                    creatingMainDiv(res)
+                }
+            })
+        }
+
+        let callServer = () => {
+
+            let q = document.getElementById("q").textContent;
+            let rdval = $("input[name='option']:checked").val();
+            let objSend = {
+                "Question": q,
+                "Answer": rdval
+            }
+            //alert(JSON.stringify(objSend));
+
+            $.ajax({
+                url: 'http://localhost:8000/QuestionnairPro/',
+                method: 'POST',
+                data: JSON.stringify(objSend),
+                success: (res) => {
+                    if (res['Answer'] == '') {
+                        endResponse(res['Question'])
+                    } else {
+                        creatingMainDiv(res);
+                    }
+                },
+                error: (err) => {
+                    alert("Error");
+                }
+            })
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="title">
+        <h1> Programming Questionnaire </h1>
+    </div>
+    <div id="main-div"
+        style="height: 220px; width: 220px; border-radius: 6px; margin-top: 150px; margin-left: 650px; background-color: #EAEDED; padding: 6px;">
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</body>
+
+</html>
